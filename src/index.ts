@@ -92,6 +92,6 @@ app.get("/messages/:roomId", (req, res) => {
     res.status(200).json({ messages });
 });
 
-server.listen(PORT,'0.0.0.0', () => {
+server.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
