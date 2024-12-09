@@ -29,6 +29,8 @@ const server = http.createServer(app);
 const ws = new WebSocketServer({ server });
 const PORT = 4000;
 
+const messages : Message[] = []
+
 ws.on('connection', function(socket) {
     socket.on('message', function message(event) {
         try {
@@ -92,6 +94,14 @@ app.get("/messages/:roomId", (req, res) => {
     res.status(200).json({ messages });
 });
 
-server.listen(PORT,'0.0.0.0', () => {
+// app.post("/messages",(req,res) => {
+//         const message: Message = req.body.message
+//         messages.push(message)
+//         res.json({
+//             message: "messeage added succesfully"
+//         })
+// })
+
+server.listen(PORT, () => {
     console.log(`Server listening on port ${PORT}`);
 });
