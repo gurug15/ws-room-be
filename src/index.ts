@@ -88,11 +88,11 @@ ws.on('connection', function(socket) {
     });
 });
 
-app.get("/messages/:roomId", (req, res) => {
-    const { roomId } = req.params;
-    const messages = roomMessages[roomId] || [];
-    res.status(200).json({ messages });
-});
+// app.get("/messages/:roomId", (req, res) => {
+//     const { roomId } = req.params;
+//     const messages = roomMessages[roomId] || [];
+//     res.status(200).json({ messages });
+// });
 
 // app.post("/messages",(req,res) => {
 //         const message: Message = req.body.message
